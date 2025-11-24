@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epreuves - Portfolio BTS SIO - Alan TOTH-SIZAIRE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+</head>
+<body class="font-sans transition-colors duration-300 flex flex-col min-h-screen">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-16 right-4 z-50">
+        <button id="darkModeToggle" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 glow">
+            <i class="fas fa-moon text-yellow-300"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white sticky top-0 z-40 shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold pulse">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-code mr-2 rotate"></i>
+                        <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#accueil" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#profil" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Profil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#sncf" class="hover:text-yellow-300 transition duration-300 relative group">
+                        SNCF
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#competences" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Compétences
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#projets" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Projets
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#epreuves" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Epreuves
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#veille" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Veille Technologique
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#contact" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden gradient-bg text-white">
+        <div class="container mx-auto px-6 pt-3 pb-6">
+            <a href="index.html#accueil" class="block py-2 hover:text-yellow-300 transition duration-300">Accueil</a>
+            <a href="index.html#profil" class="block py-2 hover:text-yellow-300 transition duration-300">Profil</a>
+            <a href="index.html#sncf" class="block py-2 hover:text-yellow-300 transition duration-300">SNCF</a>
+            <a href="index.html#competences" class="block py-2 hover:text-yellow-300 transition duration-300">Compétences</a>
+            <a href="index.html#projets" class="block py-2 hover:text-yellow-300 transition duration-300">Projets</a>
+            <a href="index.html#epreuves" class="block py-2 hover:text-yellow-300 transition duration-300">Epreuves</a>
+            <a href="index.html#veille" class="block py-2 hover:text-yellow-300 transition duration-300">Veille Technologique</a>
+            <a href="index.html#contact" class="block py-2 hover:text-yellow-300 transition duration-300">Contact</a>
+        </div>
+    </div>
+
+<main class="flex-grow">
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 typewriter text-center">Epreuves</h1>
+            <div class="text-center mt-12">
+                <button id="tableauPreviewBtn" class="bg-yellow-400 text-purple-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-file-pdf mr-2"></i>Voir le tableau de synthèse
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tableau Preview Modal -->
+    <div id="tableauModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="tableauModalTitle">
+        <div class="modal-content rounded-lg max-w-4xl w-full max-h-screen overflow-auto relative">
+            <button id="closeTableauModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la fenêtre">
+                <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+            </button>
+            <div class="p-6">
+                <h3 id="tableauModalTitle" class="text-2xl font-bold mb-4" style="color: var(--text-accent);">Tableau de synthèse - Epreuve E4</h3>
+                <div class="pdf-container">
+                    <iframe id="tableauPdfViewer" class="pdf-viewer" src="E4 TABLEAU.pdf" title="Aperçu du tableau de synthèse"></iframe>
+                    <img src="IMG E4 TABLEAU.png" alt="Aperçu du tableau de synthèse E4" class="w-full h-auto mt-4">
+                </div>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <a href="E4 TABLEAU.pdf" download="Tableau_synthese_E4.pdf" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300">
+                        <i class="fas fa-download mr-2"></i>Télécharger
+                    </a>
+                    <button id="printTableau" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-print mr-2"></i>Imprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-code mr-2"></i>
+                        <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Étudiant en développement web et mobile</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="https://www.linkedin.com/in/alan-toth-sizaire-25b529296/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Mon profil LinkedIn" title="Mon profil LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2025 Tous droits réservés</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 hidden" aria-label="Retour en haut de la page" title="Retour en haut de la page">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
