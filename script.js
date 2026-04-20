@@ -344,7 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Certificat Modal
         const certificatModal = document.getElementById('certificatModal');
         const certificatPreviewBtn = document.getElementById('certificatPreviewBtn');
-        const certificatPreviewBtn2 = document.getElementById('certificatPreviewBtn2');
         const closeCertificatModal = document.getElementById('closeCertificatModal');
         const printCertificat = document.getElementById('printCertificat');
 
@@ -363,7 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (certificatPreviewBtn) certificatPreviewBtn.addEventListener('click', openCertificatModal);
-        if (certificatPreviewBtn2) certificatPreviewBtn2.addEventListener('click', openCertificatModal);
         if (closeCertificatModal) closeCertificatModal.addEventListener('click', closeCertificatModalFunc);
 
         window.addEventListener('click', (event) => {
