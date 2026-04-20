@@ -1,46 +1,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.querySelector('main');
-
-    const loadPage = async (url) => {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Erreur HTTP: ${response.status}`);
-            }
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            const newMain = doc.querySelector('main');
-            if (newMain && mainContent) {
-                mainContent.innerHTML = newMain.innerHTML;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                console.error("L'élément <main> n'a pas été trouvé dans la page chargée ou la page actuelle.");
-            }
-        } catch (error) {
-            console.error('Erreur lors du chargement de la page:', error);
-        }
-    };
-
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                loadPage(href);
-            });
-        }
-    });
         // Open external links in a new tab
         const links = document.querySelectorAll('a');
         links.forEach(link => {
-            if (link.closest('nav')) {
-                return; // Skip links inside nav
-            }
             const href = link.getAttribute('href');
-            if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+            if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
                 link.setAttribute('target', '_blank');
             }
         });
