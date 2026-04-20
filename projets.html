@@ -190,63 +190,6 @@
     </div>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Open external links in a new tab
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-        if (link.closest('nav')) {
-            return;
-        }
-        const href = link.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
-            link.setAttribute('target', '_blank');
-        }
-    });
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const rootEl = document.documentElement;
-    const themeIcon = darkModeToggle.querySelector('i');
-
-    const applyTheme = (theme) => {
-        if (theme === 'dark') {
-            rootEl.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon', 'text-yellow-300');
-            themeIcon.classList.add('fa-sun', 'text-orange-400');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            rootEl.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun', 'text-orange-400');
-            themeIcon.classList.add('fa-moon', 'text-yellow-300');
-            localStorage.setItem('theme', 'light');
-        }
-    };
-
-    darkModeToggle.addEventListener('click', () => {
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    });
-
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme(prefersDark ? 'dark' : 'light');
-    }
-
-    // Mobile Menu
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
