@@ -81,7 +81,7 @@
 
 <main class="flex-grow">
     <!-- CV Preview Modal -->
-    <div id="cvModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div id="cvModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
         <div class="modal-content rounded-lg max-w-6xl w-full max-h-screen overflow-auto relative">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la fenêtre">
                 <i class="fas fa-times text-2xl" aria-hidden="true"></i>
@@ -276,13 +276,16 @@
                             
                             <div>
                                 <h4 class="font-bold text-gray-800 mb-2">Projets réalisés :</h4>
-                                <div class="space-y-4"></div>
+                                <div class="space-y-4">
+                                    <div>
                                         <h5 class="font-semibold">Migration vers GLPI</h5>
                                         <p class="text-sm text-gray-600">Participation à la mise en place de GLPI pour la gestion des tickets d'assistance</p>
-                                
+                                    </div>
+                                    <div>
                                         <h5 class="font-semibold">Automatisation des inventaires</h5>
                                         <p class="text-sm text-gray-600">Déploiement et configuration d'OCS Inventory pour l'automatisation des inventaires matériels</p>
                                     </div>
+                                    <div>
                                         <h5 class="font-semibold">Scripts PowerShell</h5>
                                         <p class="text-sm text-gray-600">Développement de scripts pour automatiser des tâches administratives</p>
                                     </div>
