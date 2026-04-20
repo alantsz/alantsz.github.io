@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation - Portfolio BTS SIO - Alan TOTH-SIZAIRE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+</head>
+<body class="font-sans transition-colors duration-300 flex flex-col min-h-screen">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-16 right-4 z-50">
+        <button id="darkModeToggle" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 glow">
+            <i class="fas fa-moon text-yellow-300"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white sticky top-0 z-40 shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold pulse">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-code mr-2 rotate"></i>
+                        <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#accueil" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="presentation.html" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Présentation
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#competences" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Compétences
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#projets" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Projets
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#epreuves" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Epreuves
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#veille" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Veille Technologique
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#contact" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden gradient-bg text-white">
+        <div class="container mx-auto px-6 pt-3 pb-6">
+            <a href="index.html#accueil" class="block py-2 hover:text-yellow-300 transition duration-300">Accueil</a>
+            <a href="presentation.html" class="block py-2 hover:text-yellow-300 transition duration-300">Présentation</a>
+            <a href="index.html#competences" class="block py-2 hover:text-yellow-300 transition duration-300">Compétences</a>
+            <a href="index.html#projets" class="block py-2 hover:text-yellow-300 transition duration-300">Projets</a>
+            <a href="index.html#epreuves" class="block py-2 hover:text-yellow-300 transition duration-300">Epreuves</a>
+            <a href="index.html#veille" class="block py-2 hover:text-yellow-300 transition duration-300">Veille Technologique</a>
+            <a href="index.html#contact" class="block py-2 hover:text-yellow-300 transition duration-300">Contact</a>
+        </div>
+    </div>
+
+<main class="flex-grow">
+    <!-- CV Preview Modal -->
+    <div id="cvModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+        <div class="modal-content rounded-lg max-w-6xl w-full max-h-screen overflow-auto relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la fenêtre">
+                <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+            </button>
+            <div class="p-6">
+                <h3 id="cvModalTitle" class="text-2xl font-bold mb-4" style="color: var(--text-accent);">Mon Curriculum Vitae</h3>
+                <div class="pdf-container">
+                    <iframe id="pdfViewer" class="pdf-viewer" src="CV Alan Toth-Sizaire.pdf" title="Aperçu de mon CV"></iframe>
+                </div>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <a href="CV Alan Toth-Sizaire.pdf" download="CV-Alan-Toth-Sizaire.pdf" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300">
+                        <i class="fas fa-download mr-2"></i>Télécharger
+                    </a>
+                    <button id="printCV" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-print mr-2"></i>Imprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profil Section -->
+    <section id="profil" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-left" style="color: var(--text-accent);">Mon Profil</h2>
+            <div class="flex flex-col items-center text-center">
+                <div class="mb-10 md:mb-0 flex justify-center slide-in-left">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-purple-500 shadow-xl hover:border-yellow-400 transition duration-500">
+                            <img src="IMG_0699.jpg"
+                                  alt="Photo de profil de Alan Toth-Sizaire" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-yellow-400 text-purple-800 p-4 rounded-full shadow-lg bounce">
+                            <i class="fas fa-graduation-cap text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 slide-in-right mt-8">
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--brand-purple);">À propos de moi</h3>
+                    <p class="text-lg mb-6" style="color: var(--text-secondary);">
+                        Je suis actuellement étudiant en deuxième année de BTS Services Informatiques aux Organisations (SIO). Passionné par le développement web et mobile, je m'efforce d'apprendre de nouvelles choses tout les jours pour rendre fière mes proches, des solutions innovantes, performantes qui pourront durer dans le temps.
+                    </p>
+                    
+                    <!-- Timeline -->
+                    <div class="timeline mt-10">
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <h4 class="font-bold" style="color: var(--text-accent);">Baccalauréat STMG</h4>
+                                <p class="text-sm" style="color: var(--text-secondary);">2023 - 2024</p>
+                                <p>Option SIG (Systèmes d'Information de Gestion)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item right">
+                            <div class="timeline-content">
+                                <h4 class="font-bold" style="color: var(--text-accent);">BTS SIO (en cours)</h4>
+                                <p class="text-sm" style="color: var(--text-secondary);">2024 - 2026</p>
+                                <p>Formation en Services Informatiques aux Organisations option SLAM</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item left">
+                            <div class="timeline-content">
+                                <h4 class="font-bold" style="color: var(--text-accent);">SNCF</h4>
+                                <p class="text-sm" style="color: var(--text-secondary);">2024 - 2026</p>
+                                <p>Contrat d'apprentissage en alternance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div class="p-6 rounded-lg card-hover" style="background-color: var(--bg-card-accent-purple);">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-user-graduate" style="color: var(--brand-purple);"></i>
+                                </div>
+                                <h4 class="font-bold" style="color: var(--brand-purple);">Formation</h4>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2" style="color: var(--brand-purple);"></i>
+                                    <span>BTS SIO (en cours)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2" style="color: var(--brand-purple);"></i>
+                                    <span>Baccalauréat STMG</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-6 rounded-lg card-hover" style="background-color: var(--bg-card-accent-yellow);">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-briefcase text-yellow-600"></i>
+                                </div>
+                                <h4 class="font-bold" style="color: var(--brand-yellow);">Expérience</h4>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2" style="color: var(--brand-yellow);"></i>
+                                    <span>Travail actuellement à la SNCF pour 2 ans</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2" style="color: var(--brand-yellow);"></i>
+                                    <span>Projets scolaires variés</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <button id="cvPreviewBtn2" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-file-pdf mr-2"></i>Voir mon CV
+                        </button>
+                        <a href="CV Alan Toth-Sizaire.pdf" download="CV-Alan-Toth-Sizaire.pdf" class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition duration-300">
+                            <i class="fas fa-download mr-2"></i>Télécharger
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section SNCF -->
+    <section id="sncf" class="py-20" style="background-color: var(--bg-accent);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 slide-in-left" style="color: var(--text-accent);">Mon Alternance à la SNCF</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 slide-in-left">
+                    <article class="card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-train text-red-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold" style="color: #dc2626;">SNCF Voyageurs - Technicentre Le Landy</h3>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold mb-2" style="color: var(--text-primary);">Contexte :</h4>
+                                <p style="color: var(--text-secondary);">Alternance de 2 ans dans le cadre de mon BTS SIO, au sein du service informatique du Technicentre Le Landy, spécialisé dans la maintenance des trains.</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-2" style="color: var(--text-primary);">Missions principales :</h4>
+                                <ul class="space-y-2 pl-5 list-disc" style="color: var(--text-secondary);">
+                                    <li>Support utilisateur et assistance technique</li>
+                                    <li>Maintenance et dépannage des équipements informatiques</li>
+                                    <li>Gestion du parc informatique et des logiciels liés à la SNCF</li>
+                                    <li>Documentation des procédures techniques</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-2" style="color: var(--text-primary);">Environnement technique :</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <p style="color: var(--text-secondary);">Windows Server, Active Directory, GLPI, OCS Inventory, PowerShell, Virtualisation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="lg:w-1/2 slide-in-right">
+                    <article class="card p-8 rounded-xl shadow-lg card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold" style="color: #2563eb;">Apports de l'alternance</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold mb-2" style="color: var(--text-primary);">Acquis professionnels :</h4>
+                                <ul class="space-y-3" style="color: var(--text-secondary);">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Découverte d'un environnement industriel complexe</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Maîtrise des outils de gestion de parc informatique</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Développement de compétences en résolution de problèmes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                        <span>Amélioration des capacités d'analyse et de diagnostic</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Projets réalisés :</h4>
+                                <div class="space-y-4"></div>
+                                        <h5 class="font-semibold">Migration vers GLPI</h5>
+                                        <p class="text-sm text-gray-600">Participation à la mise en place de GLPI pour la gestion des tickets d'assistance</p>
+                                
+                                        <h5 class="font-semibold">Automatisation des inventaires</h5>
+                                        <p class="text-sm text-gray-600">Déploiement et configuration d'OCS Inventory pour l'automatisation des inventaires matériels</p>
+                                    </div>
+                                        <h5 class="font-semibold">Scripts PowerShell</h5>
+                                        <p class="text-sm text-gray-600">Développement de scripts pour automatiser des tâches administratives</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 p-8 rounded-xl shadow-lg card-hover fade-in">
+                <div class="flex items-center mb-6">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-lightbulb text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-yellow-600">Perspectives</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">Objectifs professionnels :</h4>
+                        <ul class="space-y-2 pl-5 list-disc text-gray-700">
+                            <li>Approfondir mes connaissances en administration système</li>
+                            <li>Développer des compétences en cybersécurité</li>
+                            <li>Participer à des projets plus complexes</li>
+                            <li>Obtenir des certifications techniques</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">Bénéfices de l'alternance :</h4>
+                        <ul class="space-y-2 pl-5 list-disc text-gray-700">
+                            <li>Application concrète des connaissances théoriques</li>
+                            <li>Immersion en entreprise avec des responsabilités</li>
+                            <li>Développement d'un réseau professionnel</li>
+                            <li>Acquisition d'une première expérience significative</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <div class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-code mr-2"></i>
+                    <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                </div>
+                <p class="mt-2 text-gray-400">Étudiant en développement web et mobile</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end">
+                <div class="flex space-x-6 mb-4">
+                    <a href="https://www.linkedin.com/in/alan-toth-sizaire-25b529296/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Mon profil LinkedIn" title="Mon profil LinkedIn">
+                        <i class="fab fa-linkedin-in text-xl" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-sm">© 2025 Tous droits réservés</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" class="fixed bottom-8 right-8 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 hidden" aria-label="Retour en haut de la page" title="Retour en haut de la page">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
