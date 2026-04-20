@@ -168,7 +168,7 @@ nav a:hover {
    SECTION SPECIFIC STYLES
    ================================================================= */
 
-#profil, #veille, #projets {
+#profil, #veille {
     background-color: var(--bg-accent);
 }
 
@@ -259,8 +259,7 @@ nav a:hover {
     color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] #veille,
-#projets[data-theme="dark"] {
+[data-theme="dark"] #veille {
     background-color: var(--bg-accent) !important;
 }
 
