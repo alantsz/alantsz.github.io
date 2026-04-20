@@ -168,7 +168,7 @@ nav a:hover {
    SECTION SPECIFIC STYLES
    ================================================================= */
 
-#profil, #competences, #veille, #projets {
+#profil, #veille, #projets {
     background-color: var(--bg-accent);
 }
 
@@ -241,15 +241,6 @@ nav a:hover {
     position: relative;
 }
 
-/* --- Skills --- */
-.skill-bar {
-    transition: width 1s ease-in-out;
-}
-.bg-purple-600.skill-bar {
-    background: linear-gradient(90deg, var(--brand-purple), var(--brand-teal));
-}
-
-
 /* --- Tech Icons --- */
 .tech-icon {
     transition: all 0.3s ease;
@@ -268,7 +259,6 @@ nav a:hover {
     color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] #competences,
 [data-theme="dark"] #veille,
 #projets[data-theme="dark"] {
     background-color: var(--bg-accent) !important;
