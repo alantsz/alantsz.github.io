@@ -340,4 +340,50 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        // Certificat Modal
+        const certificatModal = document.getElementById('certificatModal');
+        const certificatPreviewBtn = document.getElementById('certificatPreviewBtn');
+        const certificatPreviewBtn2 = document.getElementById('certificatPreviewBtn2');
+        const closeCertificatModal = document.getElementById('closeCertificatModal');
+        const printCertificat = document.getElementById('printCertificat');
+
+        const openCertificatModal = () => {
+            if (certificatModal) {
+                certificatModal.classList.remove('hidden');
+                certificatModal.classList.add('flex');
+            }
+        };
+
+        const closeCertificatModalFunc = () => {
+            if (certificatModal) {
+                certificatModal.classList.add('hidden');
+                certificatModal.classList.remove('flex');
+            }
+        };
+
+        if (certificatPreviewBtn) certificatPreviewBtn.addEventListener('click', openCertificatModal);
+        if (certificatPreviewBtn2) certificatPreviewBtn2.addEventListener('click', openCertificatModal);
+        if (closeCertificatModal) closeCertificatModal.addEventListener('click', closeCertificatModalFunc);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === certificatModal) {
+                closeCertificatModalFunc();
+            }
+        });
+
+        if(printCertificat) {
+            printCertificat.addEventListener('click', () => {
+                const pdfViewer = document.getElementById('certificatPdfViewer');
+                if (pdfViewer) {
+                    const pdfUrl = pdfViewer.src;
+                    const printWindow = window.open(pdfUrl);
+                    if(printWindow) {
+                        printWindow.onload = () => {
+                            printWindow.print();
+                        };
+                    }
+                }
+            });
+        }
     });
