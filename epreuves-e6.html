@@ -142,84 +142,31 @@
                 Les deux réalisations sont basées sur le cahier des charges.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Réalisation 1 : Certificat Cybersécurité -->
-                <article class="card rounded-xl overflow-hidden shadow-lg card-hover fade-in" style="animation-delay: 0.1s;">
-                    <div class="h-48 bg-purple-100 flex items-center justify-center relative group">
-                        <i class="fas fa-shield-alt text-6xl text-purple-600 group-hover:scale-110 transition duration-300"></i>
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                            <button id="certificatPreviewBtn" class="bg-white text-purple-600 px-4 py-2 rounded-full font-medium hover:bg-purple-100 transition duration-300">
-                                Voir le certificat
-                            </button>
-                        </div>
+            <div class="flex justify-center max-w-6xl mx-auto">
+                <!-- Cahier des charges -->
+                <article class="card rounded-xl overflow-hidden shadow-lg card-hover fade-in max-w-2xl w-full" style="animation-delay: 0.1s;">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center relative group">
+                        <i class="fas fa-file-signature text-6xl text-blue-600 group-hover:scale-110 transition duration-300"></i>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold" style="color: var(--text-accent);">Introduction à la cybersécurité</h3>
-                            <span class="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full">Cisco</span>
+                            <h3 class="text-xl font-bold" style="color: var(--text-accent);">Cahier des Charges : Projet StadiumCompany</h3>
+                            <span class="bg-indigo-100 text-indigo-600 text-xs px-3 py-1 rounded-full">Spécifications E6</span>
                         </div>
-                        <p style="color: var(--text-secondary);" class="mb-4">Certificat de réussite délivré par Cisco Networking Academy et IRIS Paris attestant de mes fondamentaux en sécurité.</p>
+                        <p style="color: var(--text-secondary);" class="mb-4">
+                            Ce document constitue le fil rouge des situations professionnelles présentées. Il détaille la mission complète de modernisation, de segmentation (VLANs, DMZ), de sécurisation (Pare-feu, VPN IPsec) et de supervision de l'infrastructure de l'entreprise StadiumCompany.
+                        </p>
                         <div class="flex justify-between items-center">
-                            <a href="Introduction_to_Cybersecurity_certificate_tothalan063-gmail-com_6f8ea536-693b-4f61-b5ca-b6e75f1de0cc.pdf" target="_blank" class="text-purple-600 hover:text-purple-800 font-medium flex items-center">
-                                Voir le document <i class="fas fa-arrow-right ml-2"></i>
+                            <a href="Cahier_des_Charges_StadiumCompany_E6-IRIS-Paris.pdf" target="_blank" class="text-purple-600 hover:text-purple-800 font-medium flex items-center">
+                                Consulter le cahier des charges <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
                 </article>
-
-                <!-- Réalisation 2 : HA Proxy (Disponibilité / Sécurité) -->
-                <article class="card rounded-xl overflow-hidden shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="IMG HAPROXY.png" alt="Aperçu du projet HA Proxy & Heartbeat" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--text-accent);">Sécurisation et Haute Disponibilité (HAProxy)</h3>
-                        <p style="color: var(--text-secondary);" class="mb-4">Mise en place d'un Load Balancer (HAProxy) et Heartbeat pour garantir la disponibilité et la sécurité d'accès à un portail Web.</p>
-                        <a href="Livrable HAProxy.pdf" target="_blank" class="text-purple-600 hover:text-purple-800 font-medium flex items-center">
-                            Voir le livrable <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Réalisation 3 : AD Droits Utilisateurs -->
-                <article class="card rounded-xl overflow-hidden shadow-lg card-hover fade-in" style="animation-delay: 0.3s;">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="Gemini_Generated_Image_hgmewuhgmewuhgme.png" alt="Illustration Active Directory" class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--text-accent);">Gestion des habilitations ActiveDirectory</h3>
-                        <p style="color: var(--text-secondary);" class="mb-4">Attribution stricte des droits aux utilisateurs et sécurisation des accès selon le principe du moindre privilège au sein de l'entreprise.</p>
-                        <a href="Attribution_Droits_ActiveDirectory.pdf" target="_blank" class="text-purple-600 hover:text-purple-800 font-medium flex items-center">
-                            Voir le document <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </article>
             </div>
         </div>
     </div>
 
-    <!-- Certificat Modal -->
-    <div id="certificatModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="certificatModalTitle">
-        <div class="modal-content rounded-lg max-w-4xl w-full max-h-screen overflow-auto relative">
-            <button id="closeCertificatModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la fenêtre">
-                <i class="fas fa-times text-2xl" aria-hidden="true"></i>
-            </button>
-            <div class="p-6">
-                <h3 id="certificatModalTitle" class="text-2xl font-bold mb-4" style="color: var(--text-accent);">Certificat : Introduction à la cybersécurité</h3>
-                <div class="pdf-container">
-                    <iframe id="certificatPdfViewer" class="pdf-viewer" src="Introduction_to_Cybersecurity_certificate_tothalan063-gmail-com_6f8ea536-693b-4f61-b5ca-b6e75f1de0cc.pdf" title="Aperçu du certificat"></iframe>
-                </div>
-                <div class="mt-4 flex justify-center space-x-4">
-                    <a href="Introduction_to_Cybersecurity_certificate_tothalan063-gmail-com_6f8ea536-693b-4f61-b5ca-b6e75f1de0cc.pdf" download="Certificat_Cybersecurite_Alan_Toth-Sizaire.pdf" class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300">
-                        <i class="fas fa-download mr-2"></i>Télécharger
-                    </a>
-                    <button id="printCertificat" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
-                        <i class="fas fa-print mr-2"></i>Imprimer
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
 
 <!-- Footer -->
