@@ -279,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Certificat Modal
         const certificatModal = document.getElementById('certificatModal');
         const certificatPreviewBtn = document.getElementById('certificatPreviewBtn');
+        const certificatViewDocBtn = document.getElementById('certificatViewDocBtn');
         const closeCertificatModal = document.getElementById('closeCertificatModal');
         const printCertificat = document.getElementById('printCertificat');
 
@@ -297,6 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (certificatPreviewBtn) certificatPreviewBtn.addEventListener('click', openCertificatModal);
+        if (certificatViewDocBtn) certificatViewDocBtn.addEventListener('click', openCertificatModal);
         if (closeCertificatModal) closeCertificatModal.addEventListener('click', closeCertificatModalFunc);
 
         window.addEventListener('click', (event) => {
@@ -323,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Certificat Modal 2 (SNCF)
         const certificatModal2 = document.getElementById('certificatModal2');
         const certificatPreviewBtn2 = document.getElementById('certificatPreviewBtn2');
+        const certificatViewDocBtn2 = document.getElementById('certificatViewDocBtn2');
         const closeCertificatModal2 = document.getElementById('closeCertificatModal2');
         const printCertificat2 = document.getElementById('printCertificat2');
 
@@ -341,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (certificatPreviewBtn2) certificatPreviewBtn2.addEventListener('click', openCertificatModal2);
+        if (certificatViewDocBtn2) certificatViewDocBtn2.addEventListener('click', openCertificatModal2);
         if (closeCertificatModal2) closeCertificatModal2.addEventListener('click', closeCertificatModalFunc2);
 
         window.addEventListener('click', (event) => {
