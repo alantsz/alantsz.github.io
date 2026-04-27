@@ -319,4 +319,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        // Certificat Modal 2 (SNCF)
+        const certificatModal2 = document.getElementById('certificatModal2');
+        const certificatPreviewBtn2 = document.getElementById('certificatPreviewBtn2');
+        const closeCertificatModal2 = document.getElementById('closeCertificatModal2');
+        const printCertificat2 = document.getElementById('printCertificat2');
+
+        const openCertificatModal2 = () => {
+            if (certificatModal2) {
+                certificatModal2.classList.remove('hidden');
+                certificatModal2.classList.add('flex');
+            }
+        };
+
+        const closeCertificatModalFunc2 = () => {
+            if (certificatModal2) {
+                certificatModal2.classList.add('hidden');
+                certificatModal2.classList.remove('flex');
+            }
+        };
+
+        if (certificatPreviewBtn2) certificatPreviewBtn2.addEventListener('click', openCertificatModal2);
+        if (closeCertificatModal2) closeCertificatModal2.addEventListener('click', closeCertificatModalFunc2);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === certificatModal2) {
+                closeCertificatModalFunc2();
+            }
+        });
+
+        if(printCertificat2) {
+            printCertificat2.addEventListener('click', () => {
+                const pdfViewer = document.getElementById('certificatPdfViewer2');
+                if (pdfViewer) {
+                    const pdfUrl = pdfViewer.src;
+                    const printWindow = window.open(pdfUrl);
+                    if(printWindow) {
+                        printWindow.onload = () => {
+                            printWindow.print();
+                        };
+                    }
+                }
+            });
+        }
     });
