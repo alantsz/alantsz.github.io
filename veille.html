@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - Portfolio BTS SIO - Alan TOTH-SIZAIRE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans transition-colors duration-300 flex flex-col min-h-screen">
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-16 right-4 z-50">
+        <button id="darkModeToggle" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 glow">
+            <i class="fas fa-moon text-yellow-300"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white sticky top-0 z-40 shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold pulse">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-code mr-2 rotate"></i>
+                        <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#accueil" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="presentation.html" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Présentation
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="epreuves.html" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Epreuves E5
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="epreuves-e6.html" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Epreuves E6
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="veille.html" class="hover:text-yellow-300 transition duration-300 relative group">
+                        Veille Technologique
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden gradient-bg text-white">
+        <div class="container mx-auto px-6 pt-3 pb-6">
+            <a href="index.html#accueil" class="block py-2 hover:text-yellow-300 transition duration-300">Accueil</a>
+            <a href="presentation.html" class="block py-2 hover:text-yellow-300 transition duration-300">Présentation</a>
+            <a href="epreuves.html" class="block py-2 hover:text-yellow-300 transition duration-300">Epreuves E5</a>
+            <a href="epreuves-e6.html" class="block py-2 hover:text-yellow-300 transition duration-300">Epreuves E6</a>
+            <a href="veille.html" class="block py-2 hover:text-yellow-300 transition duration-300">Veille Technologique</a>
+        </div>
+    </div>
+
+    <main class="flex-grow py-20" style="background-color: var(--bg-accent);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 slide-in-left" style="color: var(--text-accent);">Veille Technologique</h2>
+            <h3 class="text-xl md:text-2xl font-semibold text-center mb-16 slide-in-right" style="color: var(--text-secondary);">L'Intelligence Artificielle, entre révolution scientifique et cadre légal</h3>
+            
+            <!-- Thème et Objectif -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="card p-6 rounded-xl shadow-lg border-l-4 border-purple-500 card-hover slide-in-left">
+                    <p class="mb-3 text-lg"><strong style="color: var(--brand-purple);">Thème de la veille :</strong> <span style="color: var(--text-secondary);">L'évolution, les impacts et la régulation de l'Intelligence Artificielle.</span></p>
+                    <p class="text-lg"><strong style="color: var(--brand-purple);">Objectif :</strong> <span style="color: var(--text-secondary);">Analyser comment l'IA transforme notre rapport à la technologie tout en imposant de nouveaux défis juridiques et éthiques aux professionnels de l'informatique.</span></p>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <div class="max-w-4xl mx-auto mb-16 slide-in-right">
+                <h3 class="text-2xl font-bold mb-4 flex items-center" style="color: var(--text-accent);">
+                    <i class="fas fa-info-circle mr-3" style="color: var(--brand-purple);"></i> Introduction
+                </h3>
+                <p style="color: var(--text-secondary);" class="leading-relaxed text-lg bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
+                    Dans le cadre de mon BTS SIO, j'ai choisi d'orienter ma veille technologique sur l'Intelligence Artificielle. Ce domaine n'est plus une simple tendance de recherche, mais une réalité qui bouleverse les infrastructures et le développement logiciel. Pour illustrer cette dynamique, j'ai sélectionné deux évènements mondiaux majeurs récents qui démontrent une double réalité : d'un côté, l'IA atteint des sommets d'innovation scientifique, et de l'autre, elle nécessite une régulation stricte pour garantir la sécurité des données et des utilisateurs.
+                </p>
+            </div>
+
+            <!-- Évènements -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
+                <!-- Évènement 1 : AI Act -->
+                <article class="card p-8 rounded-xl shadow-lg card-hover fade-in" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-4 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-balance-scale text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold leading-tight" style="color: var(--brand-purple);">Évènement 1 : L'adoption et le déploiement de l'« AI Act » par l'Union Européenne</h3>
+                    </div>
+                    <div class="space-y-4 text-base" style="color: var(--text-secondary);">
+                        <p><strong style="color: var(--text-primary);">La date clé :</strong> Mars 2024 (vote final) avec une application progressive jusqu'en 2026.</p>
+                        <p><strong style="color: var(--text-primary);">Les faits :</strong> Le Parlement européen a adopté l'AI Act (Règlement sur l'Intelligence Artificielle). Il s'agit de la toute première législation mondiale visant à encadrer le développement et l'utilisation de l'IA. Cette loi classe les systèmes d'IA selon leur niveau de risque (inacceptable, élevé, limité, minimal) et interdit certaines pratiques comme le scoring social ou la surveillance biométrique de masse non ciblée.</p>
+                        <p><strong style="color: var(--text-primary);">L'impact médiatique :</strong> La presse mondiale a largement couvert cet évènement, qualifiant l'Europe de pionnière. L'objectif de l'UE est d'imposer un standard mondial, à l'image de ce qui a été fait avec le RGPD pour la protection des données.</p>
+                        <div class="mt-6 p-5 rounded-lg" style="background-color: var(--bg-card-accent-purple);">
+                            <p><strong style="color: var(--brand-purple);">L'enjeu pour les professionnels de l'informatique (BTS SIO) :</strong> En tant que futur technicien informatique, cette loi modifie directement ma façon de travailler. Côté développement (SLAM), il faudra intégrer des normes de transparence et documenter le fonctionnement des algorithmes. Côté réseau et cybersécurité (SISR), le déploiement d'une IA exigera des mesures de sécurité renforcées pour empêcher la fuite de données et garantir une traçabilité totale des systèmes à haut risque.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Évènement 2 : Prix Nobel -->
+                <article class="card p-8 rounded-xl shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-yellow-100 p-4 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-award text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold leading-tight" style="color: var(--brand-yellow);">Évènement 2 : L'Intelligence Artificielle récompensée par les Prix Nobel 2024</h3>
+                    </div>
+                    <div class="space-y-4 text-base" style="color: var(--text-secondary);">
+                        <p><strong style="color: var(--text-primary);">La date clé :</strong> Octobre 2024.</p>
+                        <p><strong style="color: var(--text-primary);">Les faits :</strong> Les comités Nobel ont marqué l'Histoire en attribuant deux de leurs plus prestigieuses récompenses à des avancées liées à l'IA. Le Prix Nobel de Physique a été remis à John Hopfield et Geoffrey Hinton pour leurs travaux fondateurs sur les réseaux de neurones artificiels. Le Prix Nobel de Chimie a récompensé les chercheurs de Google DeepMind pour "AlphaFold", une intelligence artificielle capable de prédire la structure tridimensionnelle des protéines en quelques minutes, une tâche qui prenait auparavant des années de recherche en laboratoire.</p>
+                        <p><strong style="color: var(--text-primary);">L'impact médiatique :</strong> Les journaux du monde entier ont souligné ce tournant historique : l'IA n'est plus vue uniquement comme un outil commercial (comme les chatbots), mais est officiellement consacrée comme un moteur fondamental de la découverte scientifique et médicale.</p>
+                        <div class="mt-6 p-5 rounded-lg" style="background-color: var(--bg-card-accent-yellow);">
+                            <p><strong style="color: var(--brand-yellow);">L'enjeu pour les professionnels de l'informatique (BTS SIO) :</strong> Cet évènement rappelle que l'IA repose sur des principes algorithmiques et mathématiques solides (le Machine Learning). Le cas d'AlphaFold illustre parfaitement la puissance de l'analyse de données massives (Big Data) et du traitement cloud. Cela démontre qu'une infrastructure informatique performante et bien pensée peut aboutir à des révolutions touchant la santé humaine.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Synthèse et Conclusion -->
+            <div class="max-w-4xl mx-auto fade-in" style="animation-delay: 0.3s;">
+                <article class="card p-8 rounded-xl shadow-lg border-t-4 border-teal-500 bg-white dark:bg-gray-800">
+                    <div class="flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-teal-500 text-3xl mr-4"></i>
+                        <h3 class="text-2xl font-bold" style="color: var(--text-accent);">Synthèse et Conclusion personnelle</h3>
+                    </div>
+                    <div class="space-y-4 text-center text-lg" style="color: var(--text-secondary);">
+                        <p>
+                            Ma veille technologique met en évidence un véritable paradoxe au cœur de notre métier. Avec les Prix Nobel de 2024, nous constatons que l'Intelligence Artificielle a acquis une puissance de calcul et d'analyse capable de résoudre des défis mondiaux. Cependant, l'entrée en vigueur de l'AI Act européen nous rappelle que cette puissance ne peut être laissée sans contrôle.
+                        </p>
+                        <p>
+                            Pour mon futur métier dans les services informatiques, cela signifie que la compétence technique ne suffira plus. Il faudra savoir déployer et maintenir des outils intelligents tout en garantissant un cadre éthique, sécurisé et respectueux des lois en vigueur. La réussite des projets informatiques de demain reposera sur cet équilibre entre innovation et conformité.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold flex items-center">
+                        <i class="fas fa-code mr-2"></i>
+                        <span class="font-semibold tracking-wider">Alan TOTH-SIZAIRE</span>
+                    </div>
+                    <p class="mt-2 text-gray-400">Étudiant en développement web et mobile</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="https://www.linkedin.com/in/alan-toth-sizaire-25b529296/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Mon profil LinkedIn" title="Mon profil LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2025 Tous droits réservés</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 hidden" aria-label="Retour en haut de la page" title="Retour en haut de la page">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
