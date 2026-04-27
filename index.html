@@ -182,6 +182,33 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- Certificat 2 : SNCF Cyber Réflexes -->
+                <article class="card rounded-xl overflow-hidden shadow-lg card-hover fade-in" style="animation-delay: 0.2s;">
+                    <div class="h-48 bg-red-50 flex items-center justify-center relative group" style="background-color: rgba(220, 38, 38, 0.1);">
+                        <i class="fas fa-train text-6xl text-red-600 group-hover:scale-110 transition duration-300"></i>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <button id="certificatPreviewBtn2" class="bg-white text-red-600 px-4 py-2 rounded-full font-medium hover:bg-red-50 transition duration-300">
+                                Voir le certificat
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold" style="color: var(--text-accent);">Cyber Réflexes</h3>
+                            <span class="bg-red-100 text-red-600 text-xs px-3 py-1 rounded-full">SNCF</span>
+                        </div>
+                        <p style="color: var(--text-secondary);" class="mb-4">Certificat de réussite aux bonnes pratiques de cybersécurité délivré par la SNCF.</p>
+                        <div class="flex justify-between items-center">
+                            <a href="Certificat cybereflexes SNCF.pdf" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center">
+                                Voir le document <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="Certificat cybereflexes SNCF.pdf" target="_blank" class="text-gray-400 hover:text-red-600">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -202,6 +229,29 @@
                         <i class="fas fa-download mr-2"></i>Télécharger
                     </a>
                     <button id="printCertificat" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        <i class="fas fa-print mr-2"></i>Imprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificat Modal 2 -->
+    <div id="certificatModal2" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="certificatModalTitle2">
+        <div class="modal-content rounded-lg max-w-4xl w-full max-h-screen overflow-auto relative">
+            <button id="closeCertificatModal2" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" aria-label="Fermer la fenêtre">
+                <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+            </button>
+            <div class="p-6">
+                <h3 id="certificatModalTitle2" class="text-2xl font-bold mb-4" style="color: var(--text-accent);">Certificat : Cyber Réflexes</h3>
+                <div class="pdf-container">
+                    <iframe id="certificatPdfViewer2" class="pdf-viewer" src="Certificat cybereflexes SNCF.pdf" title="Aperçu du certificat SNCF"></iframe>
+                </div>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <a href="Certificat cybereflexes SNCF.pdf" download="Certificat_Cybereflexes_SNCF.pdf" class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition duration-300">
+                        <i class="fas fa-download mr-2"></i>Télécharger
+                    </a>
+                    <button id="printCertificat2" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
                         <i class="fas fa-print mr-2"></i>Imprimer
                     </button>
                 </div>
